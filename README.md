@@ -27,5 +27,5 @@ Construir una plataforma data-driven en Microsoft Fabric para integrar datos de 
 ## Procesamiento
 - Batch diario: 00:30 a.m.
 
-## 👥 Contacto
-Autor: [Tu nombre]  
+## Contacto
+Autor: John Arteaga Robles  
