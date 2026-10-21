@@ -14,5 +14,5 @@ objetos en el modelo: 160075
 corte por --max-objetos (500)
 escritos: 500 objetos -> salidas\UDV_Modelo_de_Datos_Fisico_V0.1094.jsonl
 inventario -> salidas\UDV_Modelo_de_Datos_Fisico_V0.1094_inventario.json
-duracion: 42.2s
+duracion: 37.5s
 INFO erwin_mart.session: desconectado del MART
