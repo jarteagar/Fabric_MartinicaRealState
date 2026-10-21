@@ -1,18 +1,18 @@
-$ python -m erwin_mart metadata --ruta "Modelo UDV/Modelo Logico" --max-objetos 500 --salida salidas
-INFO erwin_mart.session: conectado al MART Mart
-binding: estatico (gen_py)
-INFO erwin_mart.session: Mart agregado a ModelDirectories: mart://Mart
-modelo: UDV Modelo de Datos Logico V0.640
-locator: mart://Mart/Modelo UDV/Modelo Logico/UDV Modelo de Datos Logico V0.640?<params>
-  PersistenceUnits.Add(mart://Mart/Modelo UDV/Modelo Logico/UDV Modelo de Datos Logico V0.640?<params>) -> OK
-disposicion: Read_Only = Yes;
-model_type: 3
-sesion abierta
-objetos en el modelo: 58049
-  ... 200 objetos (Key_Group)
-  ... 400 objetos (Key_Group_Member)
-corte por --max-objetos (500)
-escritos: 500 objetos -> salidas\UDV_Modelo_de_Datos_Logico_V0.640.jsonl
-inventario -> salidas\UDV_Modelo_de_Datos_Logico_V0.640_inventario.json
-duracion: 12.9s
-INFO erwin_mart.session: desconectado del MART
+{
+  "modelo": "UDV Modelo de Datos Logico V0.640",
+  "locator": "mart://Mart/Modelo UDV/Modelo Logico/UDV Modelo de Datos Logico V0.640?<params>",
+  "ruta": "Modelo UDV/Modelo Logico",
+  "fecha": "2026-10-21T13:52:00",
+  "duracion_s": 12.9,
+  "objetos_totales_modelo": 58049,
+  "objetos_recorridos": 500,
+  "objetos_escritos": 500,
+  "truncado": true,
+  "clases_filtro": null,
+  "por_clase": {
+    "Attribute": 216,
+    "Entity": 28,
+    "Key_Group": 115,
+    "Key_Group_Member": 141
+  }
+}
