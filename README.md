@@ -1,36 +1,36 @@
-$ python -m erwin_mart probar-apertura --ruta "Modelo UDV/Modelo Fisico" --salida fisico.txt
+$ python -m erwin_mart probar-apertura --ruta "Modelo UDV/Modelo Logico" --salida logico.txt
 INFO erwin_mart.session: conectado al MART Mart
 binding: estatico (gen_py)
 INFO erwin_mart.session: Mart agregado a ModelDirectories: mart://Mart
 --- PROBAR-APERTURA: sondeo de apertura de modelo ---
-ruta: Modelo UDV/Modelo Fisico
+ruta: Modelo UDV/Modelo Logico
 
 PASO 1: localizar carpeta y elegir unidad
-carpeta: Modelo Fisico
+carpeta: Modelo Logico
 hijos disponibles: ['Ant']
-  unidad disponible: UDV Modelo de Datos Fisico V0.1094
-unidad elegida: UDV Modelo de Datos Fisico V0.1094
-  [paso 508679 ms]
+  unidad disponible: UDV Modelo de Datos Logico V0.640
+unidad elegida: UDV Modelo de Datos Logico V0.640
+  [paso 496722 ms]
 
 PASO 2: propiedades de la unidad del Mart
   >> unidad.Locator
-  << str = 'mart://Mart/Modelo UDV/Modelo Fisico/UDV Modelo de Datos Fisico V0.1094?<params>'
+  << str = 'mart://Mart/Modelo UDV/Modelo Logico/UDV Modelo de Datos Logico V0.640?<params>'
   >> unidad.Type
   << int = 2
   >> unidad.PropertyBag("Disposition")
   << str = "<error com_error: (-2147352567, 'Ocurrió una excepción.', (0, 'erwin9.SCAPI.PropertyBag.9.0', 'Property Bag Component ! Property argument is out of range.',...
   >> unidad.PropertyBag("Model_Type")
   << str = "<error com_error: (-2147352567, 'Ocurrió una excepción.', (0, 'erwin9.SCAPI.PropertyBag.9.0', 'Property Bag Component ! Property argument is out of range.',...
-  [paso 11 ms]
-locator: mart://Mart/Modelo UDV/Modelo Fisico/UDV Modelo de Datos Fisico V0.1094?<params>
+  [paso 13 ms]
+locator: mart://Mart/Modelo UDV/Modelo Logico/UDV Modelo de Datos Logico V0.640?<params>
 
 PASO 3: PersistenceUnits.Add
-  PersistenceUnits.Add(mart://Mart/Modelo UDV/Modelo Fisico/UDV Modelo de Datos Fisico V0.1094?<params>) -> OK
-  [paso 55233 ms]
+  PersistenceUnits.Add(mart://Mart/Modelo UDV/Modelo Logico/UDV Modelo de Datos Logico V0.640?<params>) -> OK
+  [paso 19294 ms]
 
 PASO 4: PropertyBag de la persistence unit
   >> pu.PropertyBag("Locator")
-  << str = 'erwin://Mart://Mart/Modelo UDV/Modelo Fisico/UDV Modelo de Datos Fisico V0.1094?<params>'
+  << str = 'erwin://Mart://Mart/Modelo UDV/Modelo Logico/UDV Modelo de Datos Logico V0.640?<params>'
   >> pu.PropertyBag("Disposition")
   << str = 'Read_Only = Yes;'
   >> pu.PropertyBag("Model_Type")
@@ -39,120 +39,120 @@ PASO 4: PropertyBag de la persistence unit
 
 PASO 5: Sessions.Add + Open
   >> api.Sessions.Add
-  << ISCSession = <win32com.gen_py.erwin Data Modeler Script Client API Type Library.ISCSession instance at 0x2558301060464>
+  << ISCSession = <win32com.gen_py.erwin Data Modeler Script Client API Type Library.ISCSession instance at 0x1690352832624>
   >> sesion.Open(pu)
   << bool = True
-  [paso 31 ms]
+  [paso 9 ms]
 
 PASO 6: ModelObjects (inventario de clases)
   >> ModelObjects.Count
-  << int = 160075
-objetos totales: 160075
-  Attribute: 311
-  Entity: 11
-  Key_Group: 79
-  Key_Group_Member: 99
-  (inventario limitado a 500 de 160075)
-  [paso 162 ms]
+  << int = 58049
+objetos totales: 58049
+  Attribute: 216
+  Entity: 28
+  Key_Group: 115
+  Key_Group_Member: 141
+  (inventario limitado a 500 de 58049)
+  [paso 95 ms]
 
 PASO 7: muestra de propiedades
-  [Entity] 'Organizacion':
-    Definition = 'Persona Jurídica es una entidad confirmada por una, dos o más personas que e...
-    Name = 'Organizacion'
-    Long_Id = '{9AE448F2-F651-44EC-925C-6D88D557A3A3}+00000000'
-    Owner_Path = 'Modelo de Datos UDV_FISICO'
-    Type = 'Dependent'
-    Comment = 'Persona Jurídica es una entidad confirmada por una, dos o más personas que e...
-    Physical_Name = 'M_ORGANIZACION'
-    Child_Relationships_Ref = 'R/371;R/393;R/394;R/395;R/396;R/397;R/398;R/399;R/417;R/418;R/424;R/425;R/28...
-    Dependent_Objects_Ref = '1. Party;R/371;R/393;R/394;R/395;R/396;R/397;R/398;R/399;R/417;R/418;Organiz...
+  [Entity] 'Party':
+    Definition = 'Define a un Individuo/Persona Natural u Organización/Persona Jurídica. Cualq...
+    Name = 'Party'
+    Long_Id = '{79E1CA34-F847-41AE-B329-92E3CD4BAB8B}+00000000'
+    Owner_Path = 'Modelo de Datos UDV'
+    Type = 'Independent'
+    Comment = 'Define a un Individuo/Persona Natural u Organización/Persona Jurídica. Cualq...
+    Physical_Name = 'PARTY'
+    Theme_Ref = 'Entidad Secundaria'
+    Child_Relationships_Ref = 'R/300;'
+    Dependent_Objects_Ref = '3. Cuenta;1. Party;Party;R/93;R/100;R/110;R/118;R/127;R/129;Party;R/300;R/36...
     Do_Not_Generate = 'false'
-    Parent_Relationships_Ref = 'R/1667;R/2115;R/2900;R/6080;R/6504;'
-    Attributes_Order_Ref = 'Codigo Clave Party;Tipo Clasificacion Interna Organizacion;Descripcion Tipo ...
-    Physical_Columns_Order_Ref = 'Codigo Clave Party;Tipo Clasificacion Interna Organizacion;Descripcion Tipo ...
-    Columns_Order_Ref = 'Codigo Clave Party;Tipo Clasificacion Interna Organizacion;Descripcion Tipo ...
-    User_Formatted_Name = 'Organizacion'
-    User_Formatted_Physical_Name = 'M_ORGANIZACION'
-    Shapes_Ref = 'Organizacion;Organizacion;Organizacion;'
+    Parent_Relationships_Ref = 'R/93;R/100;R/110;R/118;R/127;R/129;R/365;R/2140;R/2165;R/2169;R/2179;R/2343;'
+    Attributes_Order_Ref = 'Codigo Clave Party;Tipo Clasificacion Interna Party;Tipo Party Identificacio...
+    Physical_Columns_Order_Ref = 'Codigo Clave Party;Tipo Clasificacion Interna Party;Tipo Party Identificacio...
+    Columns_Order_Ref = 'Codigo Clave Party;Tipo Clasificacion Interna Party;Tipo Party Identificacio...
+    User_Formatted_Name = 'Party'
+    User_Formatted_Physical_Name = 'PARTY'
+    Shapes_Ref = 'Party;Party;Party;Party;Party;Party;Party;Party;Party;Party;Party;Party;'
     Image_Ref = 'Default Entity Small Icon'
     Icon_Image_Ref = 'Default Entity Icon'
     History_List = '<null>Event="2" Description=" (Modelo de Datos UDV)" SourcePath="" Comment="...
     Entity.Logical.Clasificacion del Dato = 'No Definido'
-    Entity.Logical.Tipo de Entidad = 'Sub-Tipo'
-    Entity.Logical.Dominio Principal = ''
-    Entity.Physical.Clasificacion del Dato = 'No Definido'
-    Entity.Physical.Tipo de Entidad = 'No Definido'
-    Entity.Physical.Dominio Principal = 'Cliente'
-    Entity.Physical.Tipo de Carga = ' Tipo 1 (No Historia)'
-    Entity.Physical.Universal = 'No Definido'
+    Entity.Logical.Tipo de Entidad = 'No Definido'
+    Entity.Logical.Dominio Principal = 'Clientes'
     Entity.Logical.Universal = 'No Definido'
+    Entity.Physical.Clasificacion del Dato = 'No Definido'
+    Entity.Physical.Tipo de Carga = 'No Definido'
+    Entity.Physical.Tipo de Entidad = 'No Definido'
+    Entity.Physical.Universal = 'No Definido'
     Entity.Physical.Tabla Cross = 'No Definido'
     ... (30+ propiedades)
-  [Attribute] 'Fecha Constitucion':
-    Definition = 'Fecha de constitución de la empresa.'
-    Name = 'Fecha Constitucion'
-    Long_Id = '{307A26E1-4DC1-4444-8A61-A2B8ECB3B844}+00000000'
-    Owner_Path = 'Modelo de Datos UDV_FISICO.Organizacion'
-    Type = 'NonKey'
-    Physical_Data_Type = 'DATE'
-    Null_Option_Type = 'Null'
-    Physical_Order = '24'
-    Comment = 'Fecha de constitución de la empresa.'
-    Physical_Name = 'FECCONSTITUCION'
-    Logical_Data_Type = 'DATE'
-    Parent_Domain_Ref = 'Fecha'
+  [Attribute] 'Codigo Clave Party':
+    Definition = 'Llave surrogada para mantener Party Unico (Individuo y Organizacion)'
+    Name = 'Codigo Clave Party'
+    Long_Id = '{F2E6A7EC-CEEC-4F31-A4B4-37CD0D1E098E}+00000000'
+    Owner_Path = 'Modelo de Datos UDV.Party'
+    Type = 'Key'
+    Physical_Data_Type = 'VARCHAR(128)'
+    Null_Option_Type = 'NotNull'
+    Physical_Order = '1'
+    Comment = 'Llave surrogada para mantener Party Unico (Individuo y Organizacion)'
+    Physical_Name = 'CODCLAVEPARTY'
+    Logical_Data_Type = 'VARCHAR(128)'
+    Parent_Domain_Ref = 'Codigo Clave SHA2 512'
     Hide_In_Logical = 'false'
     Hide_In_Physical = 'false'
-    Master_Attribute_Ref = 'Fecha Constitucion'
-    Font_Size = '14'
-    Attribute_Order = '24'
-    Column_Order = '24'
-    Dependent_Objects_Ref = 'Organizacion;FECCONSTITUCION;'
+    Master_Attribute_Ref = 'Codigo Clave Party'
+    Attribute_Order = '1'
+    Column_Order = '1'
+    Dependent_Objects_Ref = 'Party;Codigo Clave Party;Codigo Clave Party;Codigo Clave Party;Codigo Clave ...
     Do_Not_Generate = 'false'
-    User_Formatted_Name = 'Fecha Constitucion'
-    User_Formatted_Physical_Name = 'FECCONSTITUCION'
-    Font_Moniker = '14'
+    User_Formatted_Name = 'Codigo Clave Party'
+    User_Formatted_Physical_Name = 'CODCLAVEPARTY'
     Image_Ref = 'Default <unknown> Icon'
     History_List = '<null>Event="2" Description=" (Modelo de Datos UDV)" SourcePath="" Comment="...
     Attribute.Logical.Clasificacion del Dato = ' No DAC'
-    Attribute.Physical.Clasificacion del Dato = ' No DAC'
-    Attribute.Physical.Campo Cross = ' No'
     Attribute.Logical.Atributo Cross = ' No'
+    Attribute.Physical.Campo Cross = ' No'
+    Attribute.Physical.Clasificacion del Dato = ' No DAC'
     Attribute.Physical.Particion = 'No Definido'
+    Attribute.Physical.Exclusivo Cloud = 'No Definido'
+    Attribute.Logical.Clave Secundaria = 'NO'
     ... (30+ propiedades)
-  [Attribute] 'Flag Matriz Exterior':
-    Definition = 'Indicador de tenencia de casa de matriz en el exterior.'
-    Name = 'Flag Matriz Exterior'
-    Long_Id = '{F9631142-D68D-4EFD-8CBE-5ACD81F47A28}+00000000'
-    Owner_Path = 'Modelo de Datos UDV_FISICO.Organizacion'
+  [Attribute] 'Tipo Clasificacion Interna Party':
+    Definition = 'Código del Tipo de Persona.'
+    Name = 'Tipo Clasificacion Interna Party'
+    Long_Id = '{F069853D-A984-4AF9-8FC0-9FDFC6E84BC6}+00000000'
+    Owner_Path = 'Modelo de Datos UDV.Party'
     Type = 'NonKey'
-    Physical_Data_Type = 'CHAR(1)'
-    Null_Option_Type = 'Null'
-    Physical_Order = '25'
-    Comment = 'Indicador de tenencia de casa de matriz en el exterior.'
-    Physical_Name = 'FLGMATRIZEXTERIOR'
-    Logical_Data_Type = 'CHAR(1)'
-    Parent_Domain_Ref = 'Flag'
+    Physical_Data_Type = 'CHAR(20)'
+    Null_Option_Type = 'NotNull'
+    Physical_Order = '2'
+    Parent_Attribute_Ref = 'Tipo Clasificacion Interna Party'
+    Parent_Relationship_Ref = 'R/300'
+    Comment = 'Código del Tipo de Persona.'
+    Physical_Name = 'TIPCLASIFINTERNAPARTY'
+    Logical_Data_Type = 'CHAR(20)'
+    Parent_Domain_Ref = 'Tipo'
     Hide_In_Logical = 'false'
     Hide_In_Physical = 'false'
-    Master_Attribute_Ref = 'Flag Matriz Exterior'
-    Font_Size = '14'
-    Attribute_Order = '25'
-    Column_Order = '25'
-    Dependent_Objects_Ref = 'Organizacion;FLGMATRIZEXTERIOR;'
+    Master_Attribute_Ref = 'Tipo Clasificacion Interna Party'
+    Attribute_Order = '2'
+    Column_Order = '2'
+    Dependent_Objects_Ref = 'Party;Tipo Clasificacion Interna Party;'
     Do_Not_Generate = 'false'
-    User_Formatted_Name = 'Flag Matriz Exterior'
-    User_Formatted_Physical_Name = 'FLGMATRIZEXTERIOR'
-    Font_Moniker = '14'
+    User_Formatted_Name = 'Tipo Clasificacion Interna Party'
+    User_Formatted_Physical_Name = 'TIPCLASIFINTERNAPARTY'
     Image_Ref = 'Default <unknown> Icon'
-    History_List = '<null>Event="2" Description=" (Modelo de Datos UDV)" SourcePath="" Comment="...
+    History_List = '<null>Event="6" Description="Tipo Persona." SourcePath="" Comment="" CreateT...
     Attribute.Logical.Clasificacion del Dato = ' No DAC'
-    Attribute.Physical.Clasificacion del Dato = ' No DAC'
-    Attribute.Physical.Campo Cross = ' No'
     Attribute.Logical.Atributo Cross = ' No'
+    Attribute.Physical.Campo Cross = ' No'
+    Attribute.Physical.Clasificacion del Dato = ' No DAC'
     Attribute.Physical.Particion = 'No Definido'
     ... (30+ propiedades)
-  [paso 483 ms]
+  [paso 338 ms]
 
 CIERRE: sesion.Close + Remove (no dejar sesiones en el Mart)
 
