@@ -57,12 +57,14 @@ arribos AS (
   GROUP BY DATE_FORMAT(fecvisitanavegaciondigital, 'yyyyMM'), codclavepartycli
 ),
 pasos AS (
-  SELECT DATE_FORMAT(fecdia, 'yyyyMM') AS codmes, CAST(fecdia AS DATE) AS fecdia, canal, paso, codclavepartycli
-  FROM (
-    SELECT n.fecdia, n.codclavepartycli,
+    SELECT 
+    DATE_FORMAT(fecdia, 'yyyyMM') AS codmes, CAST(fecdia AS DATE) AS fecdia, 
+    canal, paso, codclavepartycli
+    FROM (
+        SELECT n.fecdia, n.codclavepartycli,
            COALESCE(cn.des, n.descanal) AS canal,   -- [DE] CANNAVEG
            pf.des AS paso                            -- [DE] PASOFUNNEL
-    FROM catalog_lhcl_prod_bcp.bcp_ddv_crm_navegaciondigital_v.hd_visitapaginahitnavegaciondigital n
+        FROM catalog_lhcl_prod_bcp.bcp_ddv_crm_navegaciondigital_v.hd_visitapaginahitnavegaciondigital n
     INNER JOIN cat pf   -- [DE] PASOFUNNEL: solo rutas del catalogo
       ON pf.codcatalogo = 'PASOFUNNEL' AND pf.cod = n.desrutaurl
     LEFT JOIN cat cn    -- [DE] CANNAVEG
